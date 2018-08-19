@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+float *input()
+{
+	static float q[3];
+	printf("Enter the values of a");
+	scanf("%f",&q[0]);
+	printf("Enter the values of b");
+	scanf("%f",&q[1]);
+	printf("Enter the values of c");
+    scanf("%f",&q[2]);
+    return q;
+}
+
+float compute(float *p)
+{
+	float d;
+	d=p[1]*p[1]-4*p[0]*p[2];
+	return d;
+
+}
+
+void output(float d,float *p)
+{
+	float r1,r2;
+	if(d<0)
+	{
+		r1=(-p[1])/(2*p[0]);
+		r2=sqrt(-d)/(2*p[0]);
+		printf("roots are imaginary numbers \n");
+		printf("1st root is:%.3f%+.3fi \n",r1,r2);
+		printf("2nd root is:%.3f%.3fi \n",r1,-r2);
+	}
+	else if(d>0)
+	{
+		r1=(-p[1]+sqrt(d))/(2*p[0]);
+		r2=(-p[1]-sqrt(d))/(2*p[0]);
+		printf("roots are real numbers\n");
+		printf("Roots are:%f , %f \n",r1,r2);
+	
+	}
+	else if(d==0){
+		r1=(-p[1])/(2*p[0]);
+		printf("roots are equal\n");
+		printf("Root is:%f",r1);
+	}
+	
+}
+float main()
+{
+    float *a;
+	float b;
+	a=input();
+    b=compute(a);
+	output(b,a);
+	
+}
