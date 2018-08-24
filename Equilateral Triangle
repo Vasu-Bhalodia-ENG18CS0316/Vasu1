@@ -1,4 +1,11 @@
 #include<stdio.h>
+int input()
+{
+	int x;
+    printf("please enter no. of rows:");
+    scanf("%d",&x);
+	return x;
+}
 int print_triangle(int n)
 {
     int a;
@@ -23,8 +30,7 @@ int print_triangle(int n)
     }
 }
 void main(){
-    int x;
-    printf("please enter no. of rows:");
-    scanf("%d",&x);
-    print_triangle(x);
+	int n;
+	n=input();
+	print_triangle(n);
 }
