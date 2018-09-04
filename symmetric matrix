@@ -1,0 +1,54 @@
+#include<stdio.h>
+int input(int in,int a[in][in])
+{
+    int i,j;
+    printf("Enter the size of square matrix : ");
+    scanf("%d",&in);
+    printf("Enter the numbers in matrix : \n");
+    for(i=0;i<in;i++)
+    {
+        for(j=0;j<in;j++)
+        {    
+            scanf("%d",&a[i][j]);
+        }
+        printf("\n");
+    }
+    return in;
+}
+
+int check_sym(int in,int a[in][in])
+{
+    int k,l,q;
+    for(k=0;k<in;k++)
+    {
+        for(l=0;l<in;l++)
+        {
+            if((a[k][l])!=(a[l][k]))
+            {
+                q=1;
+                break;
+            }
+            
+        }
+        
+    }
+    return q;
+}
+int output(int p)
+{
+    if(p==1)
+    {
+        printf("The matrix is asymmetric !");
+    }
+    else
+    {
+        printf("The matrix is Symmetric !");
+    }
+}
+int main()
+{
+    int in,p,a[10][10];
+    input(in,a);
+    p=check_sym(in,a);
+    output(p);
+}
