@@ -1,0 +1,34 @@
+#include<stdio.h>
+int input(int *in)
+{
+    printf("Enter the size of square matrix : ");
+    scanf("%d",in);
+}
+int input_mat(int in,int a[in][in])
+{
+    printf("Enter the numbers in matrix : \n");
+    for(int i=0;i<in;i++)
+    {
+        for(int j=0;j<in;j++)
+        {    
+            scanf("%d",&a[i][j]);
+        }
+        printf("\n");
+    }
+}
+int diagonal(int in,int a[in][in])
+{
+    printf("The diagonal elements are : ");
+    for(int i=0;i<in;i++)
+    {
+        printf(" %d",a[i][i]);
+    }
+}
+
+int main()
+{
+    int in,a[10][10];
+    input(&in);
+    input_mat(in,a);
+    diagonal(in,a);
+}
