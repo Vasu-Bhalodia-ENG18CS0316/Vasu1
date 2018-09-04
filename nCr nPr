@@ -1,0 +1,46 @@
+#include<stdio.h>
+int input(int *n,int *r)
+{
+    printf("Enter the values of n and r : \n");
+    scanf("%d %d",n,r);
+}
+int fact(int a)
+{
+    int f=1;
+    for(int i=1;i<=a;i++)
+    {
+        f=f*i;
+    }
+    return f;
+}
+int nCr(int n,int r)
+{
+    int nCr;
+    nCr=fact(n)/(fact(n-r)*fact(r));
+    return nCr;
+}
+int nPr(int n,int r)
+{
+    int nPr;
+    nPr=fact(n)/fact(n-r);
+    return nPr;
+}
+int output(int nCr,int nPr)
+{
+    printf(" nCr : %d \n nPr : %d",nCr,nPr);
+}
+int main()
+{
+    int n,r,C,P;
+    input(&n,&r);
+    if(n<r)
+    {
+        printf("Value of n should be greater than r !!");
+    }
+    else
+    {
+        C=nCr(n,r);
+        P=nPr(n,r);
+        output(C,P);
+    }
+}
