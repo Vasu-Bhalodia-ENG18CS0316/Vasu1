@@ -1,0 +1,59 @@
+#include<stdio.h>
+int input(int *x, int *y,float a[10][10])
+{
+    printf("please enter number of rows and column resply.:");
+    scanf("%d %d",x,y);
+    printf("please enter the matrix:");
+    for(int i=0;i<*x;i++)
+    {
+        for(int j=0;j<*y;j++)
+        {
+            scanf("%f",&a[i][j]);
+            
+        }
+    }
+}
+void matrix_multiply(int p,int q,int r,int s,float a[p][q],float b[r][s],float c[p][s])
+{
+    int m=0;
+    for(int i=0;i<p;i++)
+    {
+        for(int j=0;j<s;j++)
+        {
+            for(int k=0;k<q;k++)
+            {
+                m=m+a[i][k]*b[k][j];
+            }
+            c[i][j]=m;
+            m=0;
+        }
+    }
+}
+int output(int r1,int c2,float c[r1][c2])
+{
+    printf("the result is:\n");
+    for(int i=0;i<r1;i++)
+    {
+        for(int j=0;j<c2;j++)
+        {
+            printf("%f  ",&c[i][j]);
+        }
+        printf("\n");
+    }
+    
+}
+int main()
+{
+    float a[10][10],b[10][10],c[10][10];
+    int r1,c1,r2,c2;
+    input(&r1,&c1,a);
+    input(&r2,&c2,b);
+    if(c1==r2){
+    matrix_multiply(r1,c1,r2,c2,a,b,c);
+    output(r1,c2,c);
+    }
+    else
+    printf("please enter valid matrices");
+    
+}
+
