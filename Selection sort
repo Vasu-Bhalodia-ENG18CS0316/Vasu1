@@ -1,0 +1,40 @@
+#include<stdio.h>
+void input(int arr[],int *in)  
+{
+    int i;
+    printf("Enter the number of elements : ");
+    scanf("%d",in);
+    printf("Enter the elements : \n");
+    for(i=0;i<*in;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+}
+void s_sort(int arr[],int in)
+{
+    int i,j,temp=0;
+    for(i=0;i<in;i++)
+    {
+        for(j=i+1;j<in;j++)
+        {
+            if(arr[i]>arr[j])
+            {
+                arr[i]=arr[i]+arr[j];
+                arr[j]=arr[i]-arr[j];
+                arr[i]=arr[i]-arr[j];
+            }
+        }
+    }
+}
+void output(int arr[],int in)
+{
+    printf("The minimum element is : %d",arr[0]);
+    printf("\nThe maximum element is : %d",arr[in-1]);
+}
+int main()
+{
+    int arr[100],in; 
+    input(arr,&in);
+    s_sort(arr,in);
+    output(arr,in);
+}
