@@ -1,0 +1,33 @@
+#include<stdio.h>
+int input()
+{
+    int in;
+    printf("Enter the number: ");
+    scanf("%d",&in);
+    return in;
+}
+int prime(int in)
+{
+    int i,j;
+    printf("The prime numbers are : ");
+    for(i=2;i<=in;i++)
+    {
+        for(j=2;j<i;j++)
+        {
+            if((i%j)==0)
+            {
+                break;
+            }
+        }
+        if(j==i)
+        {
+            printf(" %d",i);
+        }
+    }
+}
+int main()
+{
+    int in;
+    in=input();
+    prime(in);
+}
