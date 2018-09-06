@@ -1,0 +1,27 @@
+#include<stdio.h>
+int input(char* string)   
+{
+    printf("Enter the string : ");
+    gets(string);
+}
+int str_copy(char* string,char* copy)
+{
+    int i;
+    for(i=0;string[i]!='\0';i++)
+    {
+        copy[i]=string[i];
+    }
+    copy[i]='\0';
+}
+int output(char* copy)
+{   
+    printf("The copied string is : ");
+    puts(copy);
+}
+int main()
+{
+    char string[100],copy[100]; 
+    input(string);
+    str_copy(string,copy);
+    output(copy);
+}
