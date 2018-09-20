@@ -12,7 +12,7 @@ void input(int arr[],int *in)
 }
 void s_sort(int arr[],int in)
 {
-    int i,j,temp=0;
+    int i,j;
     for(i=0;i<in;i++)
     {
         for(j=i+1;j<in;j++)
